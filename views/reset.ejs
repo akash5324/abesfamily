@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ABES-FAMILY</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="/font-awesome.4.6.1/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/profileImages/favicon.ico" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="/css/mystyle.css" type="text/css">
+</head>
+<body id="login-page">
+
+    <div class="form-box">
+        <div class="form-logo">
+       		<p class="text-center logo-text"><a href="/">ABES-FAMILY</a></p>
+       		<p class="text-center" style="color:#4aa1f3; font-weight:bold">Reset Your Password</p>
+        </div>
+        <form action="/reset/<%= passreset %>" method="post">
+          	<% if(hasErrors) {%>
+				<% for(var i = 0; i < messages.length; i++) {%>
+					<div class="alert alert-danger text-center">
+					   <a href="#" class="close" data-dismiss="alert" aria-label="close">
+						   &times;
+					   </a>
+					   <%= messages[i] %>
+
+					</div>
+				<% } %>
+			<% } %>
+
+			<% if(noErrors) {%>
+				<div class="alert alert-success text-center">
+				   <a href="#" class="close" data-dismiss="alert" aria-label="close">
+					   &times;
+				   </a>
+				   <%= success %>
+
+				</div>
+			<% } %>
+           
+            <input type="password" name="password" class="form-control" placeholder="Password" />
+            <input type="password" name="cpassword" class="form-control" placeholder="Confirm Password" />
+            <input type="submit" class="btn btn-social login-log" style="background: #03A9F4; border: #3bb5ec;" name="reset" value="RESET PASSWORD">
+        </form>
+        <a href="/" class="login-action">
+            <h5>Already reset your password?</h5>
+        </a>
+    </div>
+
+
+<script src="/assets/js/jquery.1.11.1.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+
+</body>
+</html>
