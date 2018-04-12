@@ -39,12 +39,9 @@ app.use(express.static('public'));
 app.engine('ejs', engine);
 app.set('view engine', 'ejs');
 app.use(cookieParser());
-
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
-
 app.use(validator());
-
 app.use(validator({
  customValidators: {
     noSpace: function(value) {
@@ -87,8 +84,6 @@ require('./config/admin_passport');
 server.listen(process.env.PORT || 3000, () => {
   console.log('Listening on Port 3000');
 });
-
-
 
 app.use(function(req, res){
 	res.render('404');
